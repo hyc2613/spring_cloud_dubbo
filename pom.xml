@@ -6,6 +6,7 @@
     <modules>
         <module>dubbo-origin-client</module>
         <module>dubbo-origin-server</module>
+        <module>java-spi</module>
     </modules>
 
     <parent>
