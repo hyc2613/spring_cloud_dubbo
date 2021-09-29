@@ -13,6 +13,8 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>dubbo-common</name>
     <description>dubbo 公共接口</description>
+    <!-- 注意：因为dubbo-common要被别的模块引用，所以这里要加上 packaging -->
+    <packaging>jar</packaging>
     <properties>
         <java.version>1.8</java.version>
     </properties>
