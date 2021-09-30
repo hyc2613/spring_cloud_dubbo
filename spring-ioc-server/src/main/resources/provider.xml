@@ -5,7 +5,9 @@
        http://www.springframework.org/schema/beans/spring-beans.xsd http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
 
     <dubbo:application name="hello-app-provider" />
-    <dubbo:registry address="multicast://230.79.1.1:2100"/>
+    <!-- 这里不知道为什么，用multicast 老是报 no provider ，所以后面改成用nacos做注册中心 -->
+<!--    <dubbo:registry address="multicast://230.79.1.1:2100"/>-->
+    <dubbo:registry address="nacos://127.0.0.1:8848"/>
     <dubbo:protocol name="dubbo" port="-1" />
     <dubbo:service interface="com.hyc.dubbocommon.HelloService" ref="helloService"/>
     <bean id="helloService" class="com.hyc.springiocserver.server.HelloServiceImp"/>

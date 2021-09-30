@@ -5,7 +5,8 @@
        http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
 
     <dubbo:application name="hello-app-consumer"/>
-    <dubbo:registry address="multicast://230.79.1.1:2100?unicast=false"/>
-<!--    <dubbo:registry address="N/A"/>-->
-    <dubbo:reference interface="com.hyc.dubbocommon.HelloService" id="helloService" />
+    <!-- 这里不知道为什么，用multicast 老是报 no provider ，所以后面改成用nacos做注册中心 -->
+<!--    <dubbo:registry address="multicast://230.79.1.1:2100?unicast=false"/>-->
+    <dubbo:registry address="nacos://127.0.0.1:8848"/>
+    <dubbo:reference interface="com.hyc.dubbocommon.HelloService" id="helloService" loadbalance="roundrobin" />
 </beans>

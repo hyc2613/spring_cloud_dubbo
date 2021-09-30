@@ -11,8 +11,7 @@ public class HelloClient {
 
     public static void main(String[] args) throws IOException {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("consumer.xml");
-        context.start();
-        HelloService helloService = (HelloService) context.getBean("helloService");
+        HelloService helloService = (HelloService) context.getBean(HelloService.class);
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         while (true) {

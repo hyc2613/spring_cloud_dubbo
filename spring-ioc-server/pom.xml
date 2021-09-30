@@ -34,6 +34,21 @@
             <version>2.7.4.1</version>
         </dependency>
 
+        <!-- 因为用multicast不成功，所以后面加了这两个 nacos依赖，改为用nacos做注册中心 -->
+        <!-- Dubbo Nacos registry dependency -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo-registry-nacos</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+
+        <!-- Nacos Spring dependency -->
+        <dependency>
+            <groupId>com.alibaba.nacos</groupId>
+            <artifactId>nacos-spring-context</artifactId>
+            <version>0.2.3-RC1</version>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
